@@ -1,0 +1,6 @@
+[book]
+authors = ["Joseph Guhlin"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Genome Annotation Guide"
