@@ -197,6 +197,10 @@ EggNOG is the fastest way to get from gene models to gene names and GO terms.
 ### Running
 ...coming soon...
 
+# Notes
+
+## Why the .version files?
+This makes it easier to track which version of a tool you used for an analysis, to put into your manuscript methods (or supplemental), and increase the reproducibility of the research.
 
 # Final
 
@@ -205,3 +209,4 @@ With these QC scores (BUSCO and GeneValidator), you should be able to tell the q
 For further gene model annotation, please see the appropriate chapter in this book.
 
 If higher-quality annotations are required, please read the rest of this guide!
+
