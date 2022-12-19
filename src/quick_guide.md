@@ -202,6 +202,9 @@ EggNOG is the fastest way to get from gene models to gene names and GO terms.
 ## Why the .version files?
 This makes it easier to track which version of a tool you used for an analysis, to put into your manuscript methods (or supplemental), and increase the reproducibility of the research.
 
+## Scripts
+You should place all of your commands into various scripts (.sh or .bash files) so that the exact command used to run part of the methods is preserved, and this should be a part of your GitHub release with the paper.
+
 # Final
 
 With these QC scores (BUSCO and GeneValidator), you should be able to tell the quality of your annotation and should now, quickly, have a workable annotation. Depending on your use case, there are a multitude of ways to improve the gene models, including additional RNA-Seq, or adding proteins of interest from related organisms you know to be high-quality to your protein input into the file (as opposed to entire proteomes from other species). 
