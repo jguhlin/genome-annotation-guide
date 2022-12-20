@@ -12,8 +12,7 @@ hooks:
 	cd .git/hooks && ln -s -f ../../hooks/pre-push pre-push
 
 install:
-	cargo install mdbook
-
+	cargo install mdbook mdbook-mermaid mdbook-toc
 
 s serve:
 	mdbook serve
