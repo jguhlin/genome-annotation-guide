@@ -149,15 +149,15 @@
 <p>As this field is always changing, this book is a work-in-progress. It should be considered pre-release alpha at this stage.</p>
 <h2 id="genome-annotation"><a class="header" href="#genome-annotation">Genome Annotation</a></h2>
 <p>Annotation can mean multiple things. Here Genome Annotation is the annotation to find gene models for the sequence of the assembly. Separately, annotation of the gene models (rather than the assembly) is what we use to give gene names, GO categories, and other metadata. Please refer to the diagrams below.</p>
-<pre><code class="language-mermaid">graph TD
+<pre class="mermaid">graph TD
     A[Genome Assembly] --&gt;|Annotation| B(Putative Gene Models)
-</code></pre>
-<pre><code class="language-mermaid">graph TD
+</pre>
+<pre class="mermaid">graph TD
     B[Gene Models] --&gt;|Annotation| C(Gene Models)
     C --&gt; D[Putative Gene Names]
     C --&gt; E[Gene Ontology Terms]
     C --&gt; F[Motifs]
-</code></pre>
+</pre>
 <h2 id="non-gene-annotations"><a class="header" href="#non-gene-annotations">Non-Gene Annotations</a></h2>
 <p>New tools and databases have made it easier to annotate other important genomic features, such as repeats, transposable elements, long non-coding RNA (lncRNA), and others. These will be touched on as well.</p>
 

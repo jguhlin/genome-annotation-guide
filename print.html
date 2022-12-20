@@ -150,20 +150,20 @@
 <p>As this field is always changing, this book is a work-in-progress. It should be considered pre-release alpha at this stage.</p>
 <h2 id="genome-annotation"><a class="header" href="#genome-annotation">Genome Annotation</a></h2>
 <p>Annotation can mean multiple things. Here Genome Annotation is the annotation to find gene models for the sequence of the assembly. Separately, annotation of the gene models (rather than the assembly) is what we use to give gene names, GO categories, and other metadata. Please refer to the diagrams below.</p>
-<pre><code class="language-mermaid">graph TD
+<pre class="mermaid">graph TD
     A[Genome Assembly] --&gt;|Annotation| B(Putative Gene Models)
-</code></pre>
-<pre><code class="language-mermaid">graph TD
+</pre>
+<pre class="mermaid">graph TD
     B[Gene Models] --&gt;|Annotation| C(Gene Models)
     C --&gt; D[Putative Gene Names]
     C --&gt; E[Gene Ontology Terms]
     C --&gt; F[Motifs]
-</code></pre>
+</pre>
 <h2 id="non-gene-annotations"><a class="header" href="#non-gene-annotations">Non-Gene Annotations</a></h2>
 <p>New tools and databases have made it easier to annotate other important genomic features, such as repeats, transposable elements, long non-coding RNA (lncRNA), and others. These will be touched on as well.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="quick-guide"><a class="header" href="#quick-guide">Quick Guide</a></h1>
 <h2 id="what-data-do-you-have"><a class="header" href="#what-data-do-you-have">What data do you have?</a></h2>
-<pre><code class="language-mermaid">%%{init: { 
+<pre class="mermaid">%%{init: { 
     'logLevel': 'debug', 
     'theme': 'forest', 
     'gitGraph': {'showBranches': true, 'showCommitLabel':true,'mainBranchName': 'Assembly'},
@@ -185,10 +185,59 @@ gitGraph
    merge Assembly tag: &quot;Combine&quot;
    commit type:REVERSE id: &quot;TSBERA&quot;
    commit id: &quot;Combined Gene Models&quot; type:HIGHLIGHT
-</code></pre>
+</pre>
 <p>The best tools at this time, from my experience, and proven by QC checks, are <a href="https://github.com/Gaius-Augustus/GALBA">GALBA</a> and <a href="https://github.com/Gaius-Augustus/BRAKER">BRAKER2</a> (soon BRAKER3).</p>
 <h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
-<!-- toc -->
+<ul>
+<li><a href="quick_guide.html#galba">GALBA</a>
+<ul>
+<li><a href="quick_guide.html#checklist">Checklist</a></li>
+<li><a href="quick_guide.html#download-and-install-galba">Download and Install GALBA</a>
+<ul>
+<li><a href="quick_guide.html#singularity">Singularity</a></li>
+</ul>
+</li>
+<li><a href="quick_guide.html#download-uniprot-swissprot">Download UniProt SwissProt</a></li>
+<li><a href="quick_guide.html#download-any-other-highquality-proteomes">Download any other HighQuality Proteome(s)</a></li>
+<li><a href="quick_guide.html#run-galba">Run GALBA</a></li>
+</ul>
+</li>
+<li><a href="quick_guide.html#braker2">BRAKER2</a></li>
+<li><a href="quick_guide.html#quality-control">Quality Control</a>
+<ul>
+<li><a href="quick_guide.html#busco">BUSCO</a>
+<ul>
+<li><a href="quick_guide.html#install-busco">Install BUSCO</a></li>
+<li><a href="quick_guide.html#run-busco-in-proteome-mode">Run BUSCO in Proteome Mode</a></li>
+</ul>
+</li>
+<li><a href="quick_guide.html#genevalidator">GeneValidator</a>
+<ul>
+<li><a href="quick_guide.html#installation">Installation</a></li>
+<li><a href="quick_guide.html#running-genevalidator">Running GeneValidator</a></li>
+<li><a href="quick_guide.html#interpretation">Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="quick_guide.html#gene-model-annotation">Gene Model Annotation</a>
+<ul>
+<li><a href="quick_guide.html#eggnog">EggNOG</a>
+<ul>
+<li><a href="quick_guide.html#installation-1">Installation</a></li>
+<li><a href="quick_guide.html#running">Running</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="quick_guide.html#notes">Notes</a>
+<ul>
+<li><a href="quick_guide.html#why-the-version-files">Why the .version files?</a></li>
+<li><a href="quick_guide.html#scripts">Scripts</a></li>
+</ul>
+</li>
+<li><a href="quick_guide.html#final">Final</a></li>
+</ul>
 <h2 id="galba"><a class="header" href="#galba">GALBA</a></h2>
 <p>GALBA does not take RNA-Seq nor transcripts as input, but only other gene models. You should use UniProt Swiss-Prot and, if available, a high-quality proteome from a related species (such as <em>Arabidopsis thaliana</em> for eudicots, for example). </p>
 <h3 id="checklist"><a class="header" href="#checklist">Checklist</a></h3>
